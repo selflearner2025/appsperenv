@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: camunda-bpmn-artifact-repo-a
+  name: contributor-agreement-app-cm
 data:
   artifactName: bpmn-poc.tar.gz
   artifactSha256: "666666602ac4c141736e8ffeeb9c2cf53f526f2692c428fc4fd"

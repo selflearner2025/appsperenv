@@ -1,7 +1,7 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: camunda-bpmn-sync-poc-repo-c
+  name: claims-management-app-job
   #generateName: camunda-bpmn-sync-poc
   annotations:
     argocd.argoproj.io/hook: Sync
@@ -23,7 +23,7 @@ spec:
           emptyDir: {}
         - name: artifact-info
           configMap:
-            name: camunda-bpmn-artifact-repo-c
+            name: claims-management-app-cm
       containers:
         - name: downloader
           image: alpine:3.20

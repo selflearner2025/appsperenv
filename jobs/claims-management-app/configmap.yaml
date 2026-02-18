@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: camunda-bpmn-artifact-repo-b
+  name: cclaims-management-app-cm
 data:
   artifactName: bpmn-poc.tar.gz
-  artifactSha256: "changing repo b"
+  artifactSha256: "only repo c has changed"
   # command sha256sum bpmn-poc.tar.gz
   artifactUrl: "abcd.efgh"
