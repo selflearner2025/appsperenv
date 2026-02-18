@@ -1,27 +1,26 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: testcompany-bpmn-deploy
+  name: testcompany-multirepo
   namespace: argocd
 spec:
   generators:
     - git:
         repoURL: https://github.com/selflearner2025/appsperenv.git
-        revision: master
+        revision: test
         directories:
           - path: jobs/*
   template:
     metadata:
-      name: '{{path.basename}}-camunda-job'
+      name: '{{path.basename}}-camunda-multirepo-job'
     spec:
       project: default
       source:
         repoURL: https://github.com/selflearner2025/appsperenv.git
-        targetRevision: master
+        targetRevision: test
         path: '{{path}}'
       destination:
         server: https://kubernetes.default.svc
-        namespace: camunda-dev-new
+        namespace: test-company-dev
       syncPolicy:
         automated: {}
-         
