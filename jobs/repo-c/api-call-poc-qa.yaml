@@ -30,9 +30,31 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-               echo "now deploy to camunda"
+              echo "now deploy to camunda"
                echo "hello"
                echo "deploy some more"
+               set -eu
+               echo "📦 Listing ConfigMap mounted files:"
+               ls -la /artifact
+            
+               echo "📄 Dumping file contents:"
+               for file in /artifact/*; do
+                  echo "---- $file ----"
+                  cat "$file"
+                  echo ""
+               done
+            
+               echo "🎯 Specific values (if keys exist):"
+            
+               if [ -f /artifact/artifactName ]; then
+                  echo "artifactName: $(cat /artifact/artifactName)"
+               fi
+            
+               if [ -f /artifact/artifactUrl ]; then
+                  echo "artifactUrl: $(cat /artifact/artifactUrl)"
+               fi
+            
+               echo "✅ Done reading ConfigMap"
           volumeMounts:
             - name: bpmn
               mountPath: /bpmn
