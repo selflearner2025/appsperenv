@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: camunda-jobs
+  namespace: argocd
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/selflearner2025/appsperenv.git
+        revision: master
+        directories:
+          - path: jobs/*
+  template:
+    metadata:
+      name: '{{path.basename}}-camunda-job'
+    spec:
+      project: default
+      source:
+        repoURL: https://your-git-repo-url.git
+        targetRevision: main
+        path: '{{path}}'
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: camunda-dev-new
+      syncPolicy:
+        automated: {}
+         
