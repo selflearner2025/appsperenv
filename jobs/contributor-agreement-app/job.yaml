@@ -30,12 +30,7 @@ spec:
           command: ["/bin/sh", "-c"]
           args:
             - |
-               echo "now deploy to camunda"
-               echo "hello"
-               echo "deploy some more"
-               set -eu
-               echo "📦 Listing ConfigMap mounted files:"
-               ls -la /artifact
+               
             
                echo "📄 Dumping file contents:"
                for file in /artifact/*; do
