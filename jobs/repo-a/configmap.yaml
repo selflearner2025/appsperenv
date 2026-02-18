@@ -4,6 +4,6 @@ metadata:
   name: camunda-bpmn-artifact-repo-a
 data:
   artifactName: bpmn-poc.tar.gz
-  artifactSha256: "281b003284e8145b611f02ac4c141736e8ffeeb9c2cf53f526f2692c428fc4fd"
+  artifactSha256: "666666602ac4c141736e8ffeeb9c2cf53f526f2692c428fc4fd"
   # command sha256sum bpmn-poc.tar.gz
   artifactUrl: "only repo-a must change"
