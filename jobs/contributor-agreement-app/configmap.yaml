@@ -6,4 +6,4 @@ data:
   artifactName: bpmn-poc.tar.gz
   artifactSha256: "changing contributor"
   # command sha256sum bpmn-poc.tar.gz
-  artifactUrl: "abcd.efgh
+  artifactUrl: "abcd.efgh"
