@@ -4,6 +4,6 @@ metadata:
   name: violations-management-app-cm
 data:
   artifactName: bpmn-poc.tar.gz
-  artifactSha256: "change violations artifact"
+  artifactSha256: "change violations artifact today thursday"
   # command sha256sum bpmn-poc.tar.gz
   artifactUrl: "abcd.efgh"
