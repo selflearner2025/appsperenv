@@ -9,18 +9,21 @@ spec:
         repoURL: https://github.com/selflearner2025/appsperenv.git
         revision: test
         directories:
-          - path: jobs/*
+          - path: jobs/*/*   # matches jobs/dev/claims-management-app, jobs/qa/claims-management-app etc
   template:
     metadata:
-      name: '{{path.basename}}-camunda-multirepo-job'
+      name: '{{path[1]}}-{{path.basename}}-camunda-job'  # e.g. dev-claims-management-app-camunda-job
     spec:
       project: default
       source:
         repoURL: https://github.com/selflearner2025/appsperenv.git
-        targetRevision: test
-        path: '{{path}}'
+        targetRevision: qa
+        path: '{{path}}'                    # e.g. jobs/dev/claims-management-app
       destination:
         server: https://kubernetes.default.svc
-        namespace: test-company-dev
+        namespace: 'test-company-{{path[1]}}'   # e.g. test-company-dev, test-company-qa
       syncPolicy:
         automated: {}
+        syncOptions:
+          - CreateNamespace=true
+          
