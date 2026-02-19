@@ -7,7 +7,7 @@ spec:
   generators:
     - git:
         repoURL: https://github.com/selflearner2025/appsperenv.git
-        revision: test
+        revision: qa
         directories:
           - path: jobs/*/*   # matches jobs/dev/claims-management-app, jobs/qa/claims-management-app etc
   template:
