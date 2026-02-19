@@ -12,7 +12,7 @@ spec:
           - path: jobs/*
   template:
     metadata:
-      name: '{{path.basename}}-camunda-multirepo-job'
+      name: '{{path.basename}}-multirepo-application'
     spec:
       project: default
       source:
