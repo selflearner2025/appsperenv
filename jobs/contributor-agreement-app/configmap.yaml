@@ -4,6 +4,6 @@ metadata:
   name: contributor-agreement-app-cm
 data:
   artifactName: bpmn-poc.tar.gz
-  artifactSha256: "new contributor artifact today"
+  artifactSha256: "new contributor-artifact today"
   # command sha256sum bpmn-poc.tar.gz
   artifactUrl: "abcd.efgh"
